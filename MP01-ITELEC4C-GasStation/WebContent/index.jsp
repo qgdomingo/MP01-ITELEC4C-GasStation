@@ -25,24 +25,40 @@
 			
 			<!-- GAS ORDER FORM -->
 			<div class="ui segment">
+<<<<<<< HEAD
 				<form class="ui form" action='gasolinepurchase.action' method='post'>
+=======
+				<form class="ui form" action='gasolinepurchase.action' method="post">
+>>>>>>> c254e08c1e252b35d3cd97eb645f907396066224
 					<div class="two fields">
 						<div class="required field">
 							<label>First Name</label>
 							<div class="ui left icon input">
 								<i class="user icon"></i>
+<<<<<<< HEAD
 								<input type="text" name="firstName" required>
+=======
+								<input type="text" name="first_name" required>
+>>>>>>> c254e08c1e252b35d3cd97eb645f907396066224
 							</div>
 						</div>
 						<div class="required field">
 							<label>Last Name</label>
+<<<<<<< HEAD
 							<input type="text" name="lastName" required>
+=======
+							<input type="text" name="last_name" required>
+>>>>>>> c254e08c1e252b35d3cd97eb645f907396066224
 						</div>	
 					</div>
 					<div class="two fields">
 						<div class="eleven wide required field">
 							<label>Fuel Type</label>
+<<<<<<< HEAD
 							<select class="ui fluid dropdown" name="gasType" required>
+=======
+							<select class="ui fluid dropdown" name="fuel_type" required>
+>>>>>>> c254e08c1e252b35d3cd97eb645f907396066224
 								<option value="">Select Fuel Type</option>
 								<option value="Unleaded">Unleaded</option>
 								<option value="Diesel">Diesel</option>
@@ -51,12 +67,20 @@
 						</div>
 						<div class="five wide required field" id="liters_field">
 							<label>Liters</label>
+<<<<<<< HEAD
 							<input type="number" name="liters" min="1" required>
+=======
+							<input type="number" name="fuel_liters" required>
+>>>>>>> c254e08c1e252b35d3cd97eb645f907396066224
 						</div>
 					</div>
 					<div class="required field">
 						<label>Credit Card</label>
+<<<<<<< HEAD
 						<select class="ui fluid dropdown" name="creditCardType" required>
+=======
+						<select class="ui fluid dropdown" name="credit_card_type" required>
+>>>>>>> c254e08c1e252b35d3cd97eb645f907396066224
 							<option value="">Select Credit Card</option>
 							<option value="Visa">VISA</option>		
 							<option value="Mastercard">Mastercard</option>	
@@ -71,7 +95,11 @@
 						<label>Credit Card Number</label>
 						<div class="ui left icon input">
 							<i class="credit card icon"></i>
+<<<<<<< HEAD
 							<input type="text" name="creditCardNumber" required>
+=======
+							<input type="text" name="credit_card_number" required>
+>>>>>>> c254e08c1e252b35d3cd97eb645f907396066224
 						</div>
 					</div>
 					
@@ -84,11 +112,22 @@
 
 				</form>
 			</div>
+<<<<<<< HEAD
 			
+=======
+						
+>>>>>>> c254e08c1e252b35d3cd97eb645f907396066224
 		</div>
 	</div>
 	
 	<!-- RESULT MODAL -->
+<<<<<<< HEAD
+=======
+	<div>
+	
+	</div>
+	
+>>>>>>> c254e08c1e252b35d3cd97eb645f907396066224
 	
 	</body>
 	<script src="resource/js/jquery-3.2.1.min.js"></script>
