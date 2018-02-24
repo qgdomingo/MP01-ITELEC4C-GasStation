@@ -1,0 +1,9 @@
+@charset "ISO-8859-1";
+
+	.form-area {
+		margin-top: 20px;
+	}
+	
+	i.large.icon, i.large.icons {
+		line-height: 0.6 !important;
+	}
