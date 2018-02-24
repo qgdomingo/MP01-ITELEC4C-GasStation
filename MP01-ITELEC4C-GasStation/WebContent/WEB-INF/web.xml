@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>MP01-ITELEC4C-GasStation</display-name>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>mp01-itelec4c-GasStation</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!-- provide application wide paramters -->
+  <context-param>
+  	<param-name>jdbcDriver</param-name>
+  	<param-value>PXB5XXGSBCV2n7e8KiF7IbKFNgjDPfYP615DH2M5ig4=</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>jdbcUrl</param-name>
+  	<param-value>kYyi2PTSMaDkRNp7soWrDRbZQ3FWtN0pP3n3JOGQViKcLfgrdJI2eC+OvIv/IjW6</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>dbUsername</param-name>
+  	<param-value>cqvOycaxbmfks5/d1M23Nw==</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>dbPassword</param-name>
+  	<param-value>xPKC/bf/lBSBeNONJjEKjA==</param-value>
+  </context-param>
+  
+  <servlet>
+  	<servlet-name>GasolinePurchaseServlet</servlet-name>
+  	<servlet-class>gas.station.controller.GasolinePurchaseServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>GasolinePurchaseServlet</servlet-name>
+  	<url-pattern>/gasolinepurchase.action</url-pattern>
+  </servlet-mapping>
+ 
+ <!--   
+  <listener>
+  	<listener-class>
+  		ust.greet.listener.DBUserServletContextAttributeListener
+  	</listener-class>
+  </listener>
+  -->
 </web-app>
