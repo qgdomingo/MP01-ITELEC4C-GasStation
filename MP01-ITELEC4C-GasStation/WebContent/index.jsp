@@ -6,62 +6,68 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 		<link rel="stylesheet" href="resource/semantic-ui/semantic.min.css">
 		<link rel="stylesheet" href="resource/css/order_form.css">
-		<title>Insert title here</title>
+		<title>Stop n' Gas</title>
 	</head>
 	<body>
 	
 	<div class="ui centered grid container">
-		<div class="eight wide computer eight wide tablet sixteen wide mobile column form-area ">
+		<div class="eight wide computer ten wide tablet sixteen wide mobile column form-area ">
 		
 			<!-- GAS HEADER -->
-			<h2 class="ui center aligned icon header">
+			<h1 class="ui center aligned icon header">
 				<div class="ui image">
 					<img class="ui image" src="resource/img/ust_logo.png">
 				</div>
 				<div class="content">
-					Gas Station eCommerce
+					Stop n' Gas
 				</div>
-			</h2>
+			</h1>
 			
 			<!-- GAS ORDER FORM -->
 			<div class="ui segment">
 				<form class="ui form">
 					<div class="two fields">
-						<div class="field">
+						<div class="required field">
 							<label>First Name</label>
 							<div class="ui left icon input">
 								<i class="user icon"></i>
 								<input type="text" required>
 							</div>
 						</div>
-						<div class="field">
+						<div class="required field">
 							<label>Last Name</label>
 							<input type="text" required>
 						</div>	
 					</div>
 					<div class="two fields">
-						<div class="twelve wide field">
-							<label>Gas Type</label>
+						<div class="eleven wide required field">
+							<label>Fuel Type</label>
 							<select class="ui fluid dropdown" required>
-								<option value="">Select Gas</option>
-								<option value="Unledead">Unleadead</option>
+								<option value="">Select Fuel Type</option>
+								<option value="Unleaded">Unleaded</option>
 								<option value="Diesel">Diesel</option>
 								<option value="Premium">Premium</option>
 							</select>
 						</div>
-						<div class="four wide field">
+						<div class="five wide required field" id="liters_field">
 							<label>Liters</label>
 							<input type="number" required>
 						</div>
 					</div>
-					<div class="field">
+					<div class="required field">
 						<label>Credit Card</label>
 						<select class="ui fluid dropdown" required>
 							<option value="">Select Credit Card</option>
-							<option value="Visa">VISA</option>				
+							<option value="Visa">VISA</option>		
+							<option value="Mastercard">Mastercard</option>	
+							<option value="JCB">JCB</option>	
+							<option value="AMEX">AMEX</option>			
+							<option value="PayMaya">Pay Maya</option>
+							<option value="GCASH">GCASH</option>
+							<option value="DINERS">DINERS</option>
 						</select>
 					</div>
-					<div class="field">
+					<div class="required field">
 						<label>Credit Card Number</label>
 						<div class="ui left icon input">
 							<i class="credit card icon"></i>
@@ -72,7 +78,7 @@
 					<button type="submit" class="ui fluid big green animated button" tabindex="0">
 						<div class="visible content">Submit Order</div>
 						<div class="hidden content">
-							<i class="large cart arrow down icon"></i>
+							<i class="large shopping cart icon"></i>
 						</div>
 					</button>
 
@@ -81,9 +87,16 @@
 			
 		</div>
 	</div>
-
+	
+	<!-- RESULT MODAL -->
+	<div>
+	
+	</div>
+	
+	
 	</body>
 	<script src="resource/js/jquery-3.2.1.min.js"></script>
+	<script src="resource/js/jquery.form.min.js"></script>
 	<script src="resource/js/order_form.js"></script>
 	<script src="resource/semantic-ui/semantic.min.js"></script>
 </html>
