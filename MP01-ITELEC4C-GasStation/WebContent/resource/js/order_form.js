@@ -2,51 +2,29 @@
  * 
  */
 
-	$(document).ready(() => {
-		$('.ui.fluid.dropdown').dropdown();
-		formValidation();
-		
+	$(document).ready( function() {
+		formValidation();		
 	});
-	
-/*
- * FUNCTION HELPERS
- */
-		
-	function addCSSClass(element, cssClass) {
-		if(!$(element).hasClass(cssClass)) $(element).addClass(cssClass); 
-	}
-		
-	function removeCSSClass(element, cssClass) {
-		if($(element).hasClass(cssClass)) $(element).removeClass(cssClass); 
-	}
 	
 /*
  * DOM EVENTS
  */
-	
-	$('form').on('input', () => {
 		
-	});
-	
-	$('button[type="submit"]').click(() => {
-		//addCSSClass('form', 'loading');
-	});
-	
-	$('#select_card').click(() => {
+	$('#select_card').click( function() {
 		$('#credit_card_dia').modal({
 			closeable: false,
 			blurring: true,
-			onApprove: () => {
+			onApprove: function() {
 				$('input[name=credit_card_type]').val( $('input:radio[name=card_type_dia]:checked').val() );
 			}
 		}).modal('show');
 	});
 	
-	$('#select_fuel').click(() => {
+	$('#select_fuel').click( function(){
 		$('#fuel_type_dia').modal({
 			closeable: false,
 			blurring: true,
-			onApprove: () => {
+			onApprove: function() {
 				$('input[name=fuel_type]').val( $('input:radio[name=fuel_type_dia]:checked').val() );
 			}
 		}).modal('show');
