@@ -22,12 +22,12 @@ public class GasolinePurchaseServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lastName");
-		String creditCardType = request.getParameter("creditCardType");
-		String creditCardNumber = request.getParameter("creditCardNumber");
-		String gasType = request.getParameter("gasType");
-		double liters = Double.parseDouble(request.getParameter("liters"));
+		String firstName = request.getParameter("first_name");
+		String lastName = request.getParameter("last_name");
+		String creditCardType = request.getParameter("credit_card_type");
+		String creditCardNumber = request.getParameter("credit_card_number");
+		String gasType = request.getParameter("fuel_type");
+		double liters = Double.parseDouble(request.getParameter("fuel_liters"));
 		
 		double pricePerLiterAmount = 0.00;
 		double purchaseAmount = 0.00;

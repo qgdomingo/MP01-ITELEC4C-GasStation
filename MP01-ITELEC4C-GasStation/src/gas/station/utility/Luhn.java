@@ -20,7 +20,8 @@ public class Luhn {
             }
         }
         
-        if ((s1 + s2) % 10 == 0){
+        if ((s1 + s2) % 10 == 0
+        		&& number.length() == 16){
             return true;        	
         } else {
         	throw new InvalidCreditCardNumberException("Credit Card Number Invalid.");

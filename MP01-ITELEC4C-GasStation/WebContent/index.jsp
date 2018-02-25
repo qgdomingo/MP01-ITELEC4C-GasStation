@@ -8,7 +8,8 @@
 		<link rel="stylesheet" href="resource/css/order_form.css">
 		<title>Stop n' Gas</title>
 	</head>
-<body>
+	<body>
+	
 	<div class="ui centered grid container">
 		<div class="eight wide computer ten wide tablet sixteen wide mobile column form-area ">
 		
@@ -50,7 +51,7 @@
 						</div>
 						<div class="five wide required field" id="liters_field">
 							<label>Liters</label>
-							<input type="number" name="fuel_liters" required>
+							<input type="number" name="fuel_liters" min="1" required>
 						</div>
 					</div>
 					<div class="required field">
@@ -83,7 +84,6 @@
 
 				</form>
 			</div>
-						
 		</div>
 	</div>
 	
@@ -96,7 +96,6 @@
 			<button class="ui cancel button">Okay</button>
 		</div>
 	</div>
-	
 	
 	</body>
 	<script src="resource/js/jquery-3.2.1.min.js"></script>
