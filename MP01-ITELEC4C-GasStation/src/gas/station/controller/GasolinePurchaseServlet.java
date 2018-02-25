@@ -52,6 +52,7 @@ public class GasolinePurchaseServlet extends HttpServlet {
 		vat = Double.parseDouble(String.format("%.2f", vat));
 		totalAmount = purchaseAmount + vat;
 		totalAmount = Double.parseDouble(String.format("%.2f", totalAmount));
+		
 		try {
 			boolean passedLuhnTest = Luhn.luhnTest(creditCardNumber);	
 			boolean validType = CreditCardTypeValidation.validateCardType(creditCardNumber, creditCardType);
