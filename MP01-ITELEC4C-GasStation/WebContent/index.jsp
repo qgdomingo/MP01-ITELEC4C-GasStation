@@ -24,7 +24,11 @@
 			</h1>
 			
 			<!-- GAS ORDER FORM -->
-			<div class="ui segment">
+			<div class="ui inverted segment">		
+				<h3 class="ui dividing header">
+					Order Form
+				</h3>
+			
 				<form class="ui form" action='gasolinepurchase.action' method="post">
 					<div class="two fields">
 						<div class="required field">

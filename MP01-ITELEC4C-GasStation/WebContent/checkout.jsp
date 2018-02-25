@@ -24,10 +24,10 @@
 			<!-- GAS CHECKOUT RESULTS -->
 				
 			<h3 class="ui dividing header">
-				You Ordered..
+				You Ordered
 			</h3>
 			
-			<table class="ui basic compact definition table">
+			<table class="ui compact definition table">
 				<tbody>
 					<tr>
 						<td><b>Customer Name:</b></td>
