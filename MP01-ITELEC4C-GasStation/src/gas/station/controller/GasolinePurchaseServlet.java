@@ -76,8 +76,10 @@ public class GasolinePurchaseServlet extends HttpServlet {
 			}
 		} catch (InvalidCreditCardNumberException e) {
 			
-			System.out.println("Caught the exception");
-            System.out.println(e.getMessage());
+			getServletContext().log("Invalid Credit Card Number. Redirecting to Error Page");
+			
+			getServletContext().getRequestDispatcher("/carderror.jsp")
+				.forward(request, response);	
 		}
 		
 	}
