@@ -55,7 +55,7 @@
 						</div>
 						<div class="five wide required field" id="liters_field">
 							<label>Liters</label>
-							<input type="number" name="fuel_liters" min="1" required>
+							<input type="number" name="fuel_liters" min="1" step="0.1" required>
 						</div>
 					</div>
 					<div class="required field">

@@ -31,36 +31,36 @@
 				<tbody>
 					<tr>
 						<td><b>Customer Name:</b></td>
-						<td>INSERT CUSTOMER NAME</td>
+						<td>${purchase.firstName} ${purchase.lastName}</td>
 					</tr>
 					<tr>
 						<td><b>Fuel Type:</b></td>
-						<td>INSERT FUEL TYPE</td>
+						<td>${purchase.gasType}</td>
 					</tr>
 					<tr>
 						<td><b>Price per Liter:</b></td>
-						<td>&#8369;INSERT PRICE</td>
+						<td>&#8369;${purchase.pricePerLiterAmount}</td>
 					</tr>
 					<tr>
 						<td><b>Liters Ordered:</b></td>
-						<td>INSERT LITERS</td>
+						<td>${purchase.liters}</td>
 					</tr>
 					<tr>
-						<td><b>Price Amount:</b></td>
-						<td>&#8369;INSERT PRICE AMOUNT</td>
+						<td><b>Purchase Amount:</b></td>
+						<td>&#8369;${purchase.purchaseAmount}</td>
 					</tr>
 					<tr>
 						<td><b>VAT:</b></td>
-						<td>&#8369;INSERT VAT</td>
+						<td>&#8369;${purchase.vat}</td>
 					</tr>
 					<tr>
 						<td><b>TOTAL AMOUNT:</b></td>
-						<td>&#8369;INSERT PRICE</td>
+						<td>&#8369;${purchase.totalAmount}</td>
 					</tr>
 				</tbody>
 			</table>
 				
-			<p><i>Credit card **** **** **** [INSERT LAST 4 DIGITS] has successfully charged.</i></p>
+			<p><i>Credit card **** **** **** ${purchase.creditCardNumber} has successfully charged.</i></p>
 			
 			<button type="button" class="ui fluid big blue animated button" tabindex="0">
 				<div class="visible content">Order Again</div>

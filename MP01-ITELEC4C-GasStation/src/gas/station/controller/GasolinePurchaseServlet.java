@@ -36,41 +36,35 @@ public class GasolinePurchaseServlet extends HttpServlet {
 		
 		if (gasType.equals("Unleaded")){
 			pricePerLiterAmount  = 54.0;
-			pricePerLiterAmount = Double.parseDouble(String.format("%.3f", pricePerLiterAmount));
+			pricePerLiterAmount = Double.parseDouble(String.format("%.2f", pricePerLiterAmount));
 		} else if (gasType.equals("Diesel")){
 			pricePerLiterAmount = 41.0;
-			pricePerLiterAmount = Double.parseDouble(String.format("%.3f", pricePerLiterAmount));
+			pricePerLiterAmount = Double.parseDouble(String.format("%.2f", pricePerLiterAmount));
 		} else if (gasType.equals("Premium")){
 			pricePerLiterAmount = 58.0;
-			pricePerLiterAmount = Double.parseDouble(String.format("%.3f", pricePerLiterAmount));
+			pricePerLiterAmount = Double.parseDouble(String.format("%.2f", pricePerLiterAmount));
 		}
 		
 		purchaseAmount = liters * pricePerLiterAmount;
-		purchaseAmount = Double.parseDouble(String.format("%.3f", purchaseAmount));
+		purchaseAmount = Double.parseDouble(String.format("%.2f", purchaseAmount));
 		vat = purchaseAmount * 0.12;
-		vat = Double.parseDouble(String.format("%.3f", vat));
+		vat = Double.parseDouble(String.format("%.2f", vat));
 		totalAmount = purchaseAmount + vat;
-		totalAmount = Double.parseDouble(String.format("%.3f", totalAmount));
+		totalAmount = Double.parseDouble(String.format("%.2f", totalAmount));
 		
 		try {
 			boolean passedLuhnTest = Luhn.luhnTest(creditCardNumber);	
 			
 			if(passedLuhnTest){
 				PurchaseBean purchaseBean = new PurchaseBean(getServletContext(),
-						Security.encrypt(firstName), 
-						Security.encrypt(lastName),
-						Security.encrypt(creditCardType), 
-						Security.encrypt(creditCardNumber),
+						firstName, lastName,
+						creditCardType, creditCardNumber,
 						gasType, liters, pricePerLiterAmount, purchaseAmount,
 						vat, totalAmount );
 				
-				System.out.println("pricerPerLiterAmount: " + pricePerLiterAmount);
-				System.out.println("purchaseAmount: " + purchaseAmount);
-				System.out.println("vat: " + vat);
-				System.out.println("total amount: " + totalAmount);
-				
 				purchaseBean.insertRecord();
 				//binding the user object to request attribute
+				purchaseBean.setCreditCardNumber(creditCardNumber.substring(creditCardNumber.length() - 4));
 				getServletContext().setAttribute("purchase", purchaseBean);
 				
 				getServletContext().log("ready for dispatching " +

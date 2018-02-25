@@ -3,6 +3,9 @@ package gas.station.model;
 import java.sql.SQLException;
 
 import javax.servlet.ServletContext;
+
+import gas.station.utility.Security;
+
 import java.sql.*;
 public class PurchaseBean {
 
@@ -53,10 +56,10 @@ public class PurchaseBean {
 			
 			PreparedStatement pstmnt = connection.prepareStatement(sql);
 			
-			pstmnt.setString(1, this.firstName);
-			pstmnt.setString(2, this.lastName);
-			pstmnt.setString(3, this.creditCardType);
-			pstmnt.setString(4, this.creditCardNumber);
+			pstmnt.setString(1, Security.encrypt(this.firstName));
+			pstmnt.setString(2, Security.encrypt(this.lastName));
+			pstmnt.setString(3, Security.encrypt(this.creditCardType));
+			pstmnt.setString(4, Security.encrypt(this.creditCardNumber));
 			pstmnt.setString(5, this.gasType);
 			pstmnt.setDouble(6, this.liters);
 			pstmnt.setDouble(7, this.pricePerLiterAmount);
