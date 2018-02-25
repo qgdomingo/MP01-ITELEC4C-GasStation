@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import gas.station.model.*;
+import gas.station.utility.CreditCardTypeValidation;
 import gas.station.utility.InvalidCreditCardNumberException;
 import gas.station.utility.Luhn;
 import gas.station.utility.Security;
@@ -51,11 +52,11 @@ public class GasolinePurchaseServlet extends HttpServlet {
 		vat = Double.parseDouble(String.format("%.2f", vat));
 		totalAmount = purchaseAmount + vat;
 		totalAmount = Double.parseDouble(String.format("%.2f", totalAmount));
-		
 		try {
 			boolean passedLuhnTest = Luhn.luhnTest(creditCardNumber);	
-			
-			if(passedLuhnTest){
+			boolean validType = CreditCardTypeValidation.validateCardType(creditCardNumber, creditCardType);
+						
+			if(passedLuhnTest && validType){
 				PurchaseBean purchaseBean = new PurchaseBean(getServletContext(),
 						firstName, lastName,
 						creditCardType, creditCardNumber,
