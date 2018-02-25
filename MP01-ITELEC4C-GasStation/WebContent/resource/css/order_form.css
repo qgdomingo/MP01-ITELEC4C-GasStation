@@ -5,11 +5,19 @@
 	}
 	
 	body {
-		background: url("../img/background4.jpg") no-repeat center center fixed;
+		background: url("../img/background5.jpg") no-repeat center center fixed;
 	    -webkit-background-size: cover;
 	    -moz-background-size: cover;
 	    -o-background-size: cover;
 	    background-size: cover;
+	}
+	
+	label {
+		color: white !important;
+	}
+	
+	.ui.radio.checkbox > label {
+		color: black !important;
 	}
 	
 	i.large.icon, i.large.icons {
@@ -21,4 +29,14 @@
 		color: white !important;
 	}
 	
+	.ui.horizontal.divider.header {
+		color: white !important;
+	}
 	
+	.ui.modal > .actions {
+		text-align: center !important;
+	}
+	
+	.ui.modal > .content {
+		background-color: #1b1c1d !important
+	}

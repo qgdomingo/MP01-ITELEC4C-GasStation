@@ -7,6 +7,15 @@
 		<link rel="stylesheet" href="resource/semantic-ui/semantic.min.css">
 		<link rel="stylesheet" href="resource/css/order_form.css">
 		<title>Stop n' Gas</title>
+		
+		<!-- BROWSER ICONS -->
+		<link rel="apple-touch-icon" sizes="180x180" href="resource/icon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="resource/icon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="resource/icon/favicon-16x16.png">
+		<link rel="manifest" href="resource/icon/site.webmanifest">
+		<link rel="mask-icon" href="resource/icon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="theme-color" content="#ffffff">	
 	</head>
 <body>
 	<div class="ui centered grid container">
@@ -14,7 +23,7 @@
 			<!-- GAS HEADER -->
 			<h1 class="ui center aligned icon header">
 				<div class="ui image">
-					<img class="ui image" src="resource/img/ust_logo.png">
+					<img class="ui image" src="resource/img/stopandgas.png">
 				</div>
 				<div class="content">
 					Stop n' Gas
@@ -23,11 +32,12 @@
 			
 			<!-- GAS CHECKOUT RESULTS -->
 				
-			<h3 class="ui dividing header">
-				You Ordered
-			</h3>
+			<h2 class="ui dividing header">
+				<i class="shopping cart icon"></i>
+				You Purchased...
+			</h2>
 			
-			<table class="ui compact definition table">
+			<table class="ui compact definition inverted table">
 				<tbody>
 					<tr>
 						<td><b>Customer Name:</b></td>
