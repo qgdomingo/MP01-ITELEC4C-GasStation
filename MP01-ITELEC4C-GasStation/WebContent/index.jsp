@@ -87,15 +87,19 @@
 		</div>
 	</div>
 	
-	<!-- RESULT MODAL -->
-	<div>
-	
+	<!-- CREDIT CARD TYPE PICKER MODAL -->
+	<div class="ui modal">
+		<div class="content">
+			
+		</div>
+		<div class="action">
+			<button class="ui cancel button">Okay</button>
+		</div>
 	</div>
 	
 	
 	</body>
 	<script src="resource/js/jquery-3.2.1.min.js"></script>
-	<script src="resource/js/jquery.form.min.js"></script>
 	<script src="resource/js/order_form.js"></script>
 	<script src="resource/semantic-ui/semantic.min.js"></script>
 </html>

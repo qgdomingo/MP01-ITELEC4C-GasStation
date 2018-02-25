@@ -23,6 +23,32 @@
 		if($(element).hasClass(cssClass)) $(element).removeClass(cssClass); 
 	}
 	
+	function checkIfLitersNumber() {
+		gas_liters = parseInt( $('input[type="number"]').val() );
+		
+		if( isNaN( gas_liters ) && gas_liters >= 1) {
+			addCSSClass('#liters_field', 'error');
+			return false;
+		} 
+		else {
+			removeCSSClass('#liters_field', 'error');
+			return true;
+		}
+	} 
+	
+	function checkNotEmptyFields() {
+		
+	}
+	
+	function formChecker() {
+		if(checkIfLitersNumber() && checkEmptyFields()) {
+			return true;
+		} 
+		else {
+			return false;
+		}
+	}
+	
 /*
  * DOM EVENTS
  */
@@ -32,28 +58,11 @@
 	});
 	
 	$('input[type="number"]').on('input', () => {
-		gas_liters = parseInt( $('input[type="number"]').val() );
-		
-		if( isNaN( gas_liters ) ) {
-			addCSSClass('#liters_field', 'error');
-		} 
-		else {
-			removeCSSClass('#liters_field', 'error');
-		}
+		checkIfLitersNumber();
 	});
 		
 /*
  * FUNCTION SUBMIT FORM
  */	
-	function submitGasOrder() {
-		$('form').ajaxForm({
-			resetForm: true,
-		    success: function(response) {    
-
-		    },
-		    error: function(response) {
 	
-		    }
-		});
-	}
 	

@@ -7,3 +7,8 @@
 	i.large.icon, i.large.icons {
 		line-height: 0.6 !important;
 	}
+	
+	.ui.definition.table tr td.definition, .ui.definition.table tr td:first-child:not(.ignored) {
+		background: #fbb246 !important;
+		color: white !important;
+	}
