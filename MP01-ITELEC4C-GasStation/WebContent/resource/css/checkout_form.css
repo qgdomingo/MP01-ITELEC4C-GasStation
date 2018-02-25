@@ -1,6 +1,0 @@
-@charset "ISO-8859-1";
-
-	.ui.definition.table tr td.definition, 
-	.ui.definition.table tr td:first-child:not(.ignored) {
-		padding-left: 5px !important;
-	}
