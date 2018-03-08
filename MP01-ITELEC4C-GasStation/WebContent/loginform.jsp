@@ -51,7 +51,7 @@
 					Login
 				</h3>
 			 	
-				<form class="ui form">
+				<form class="ui form" action='validateuser.action' method="post">
 					<div class="two fields">
 					<div class="field">
 						<label>Username</label>

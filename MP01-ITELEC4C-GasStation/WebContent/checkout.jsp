@@ -36,21 +36,32 @@
 					<i class="cart icon"></i>
 					Order
 				</a>
-				<a class="item" href="history.jsp">
-					<i class="history icon"></i>
-					Transaction History
-				</a>
+				<% 
+					if (session.getAttribute("userObj") != null) {
+				%>	
+				<form method="post" action="viewlogs.action" id="viewlogs_form">
+					<a class="item" id="viewlogs_btn">
+						<i class="history icon"></i>
+						Transaction History
+					</a>
+				</form>
+				<%} %>
 			 	<div class="right menu">
+			 		<% 
+					if (session.getAttribute("userObj") == null) {
+					%>	
 					<a class="item" href="loginform.jsp">
 						<i class="sign in alternate icon"></i>
 						Login
 					</a>
-					<form method="" action="" id="logout_form">
-						<a class="item" href="javascript:{}" id="logout_btn">
+					<%} else { %>
+					<form method="post" action="logout.action" id="logout_form">
+						<a class="item" id="logout_btn">
 							<i class="sign out alternate icon"></i>
 							Logout
 						</a>
 					</form>
+					<%} %>
 				</div>
 			</div>
 			
@@ -108,6 +119,7 @@
 	<script src="resource/js/jquery-3.2.1.min.js"></script>
 	<script src="resource/semantic-ui/semantic.min.js"></script>
 	<script src="resource/js/logout_form.js"></script>
+	<script src="resource/js/viewlogs_form.js"></script>
 	<script>
 		$('button').click( function(){
 		   window.location.href = 'index.jsp';

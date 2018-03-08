@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+    import="java.sql.*, gas.station.utility.Security"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -18,6 +19,11 @@
 		<meta name="theme-color" content="#ffffff">	
 	</head>
 <body>
+	<%
+	if (session.getAttribute("userObj") == null) {
+		response.sendRedirect("index.jsp");		
+	}
+	%>	
 	<div class="ui centered grid container">
 		<div class="ten wide computer fourteen wide tablet sixteen wide mobile column form-area ">
 			<!-- GAS HEADER -->
@@ -36,13 +42,15 @@
 					<i class="cart icon"></i>
 					Order
 				</a>
-				<a class="active item" href="history.jsp">
-					<i class="history icon"></i>
-					Transaction History
-				</a>
+				<form method="post" action="viewlogs.action" id="viewlogs_form">
+					<a class="item" id="viewlogs_btn">
+						<i class="history icon"></i>
+						Transaction History
+					</a>
+				</form>
 			 	<div class="right menu"> 
-					<form method="" action="" id="logout_form">
-						<a class="item" href="javascript:{}" id="logout_btn">
+					<form method="post" action="logout.action" id="logout_form">
+						<a class="item" id="logout_btn">
 							<i class="sign out alternate icon"></i>
 							Logout
 						</a>
@@ -51,6 +59,8 @@
 			</div>
 			
 			<!-- TRANSACTION HISTORY -->
+			<% ResultSet log = (ResultSet) request.getAttribute("logRecord"); %>
+			
 			<div class="ui inverted segment">
 				<h3 class="ui header" style="margin-top: 5px;">
 					<i class="history icon"></i>
@@ -60,31 +70,25 @@
 				<table class="ui table">
 					<thead class="ui header"> 
 						<tr>
-							<td>X1</td>
-							<td>Y2</td>
-							<td>Z3</td>
-							<td>A4</td>
+							<td>id</td>
+							<td>Credit Card Number</td>
+							<td>Fuel Type</td>
+							<td>Fuel Liters</td>
+							<td>Total Net Pay</td>
+							<td>Timestamp</td>
 						</tr>
 					</thead>
 					<tbody>
+					<% while (log.next()) { %>
 						<tr>
-							<td>X</td>
-							<td>Y</td>
-							<td>Z</td>
-							<td>A</td>
+							<td><%=log.getInt("id") %></td>
+							<td><%=Security.decrypt(log.getString("cc_number")) %></td>
+							<td><%=Security.decrypt(log.getString("fuel_type")) %></td>
+							<td><%=Security.decrypt(log.getString("fuel_liters")) %></td>
+							<td><%=Security.decrypt(log.getString("total_net_pay")) %></td>
+							<td><%=Security.decrypt(log.getString("timestamp")) %></td>
 						</tr>
-						<tr>
-							<td>X</td>
-							<td>Y</td>
-							<td>Z</td>
-							<td>A</td>
-						</tr>
-						<tr>
-							<td>X</td>
-							<td>Y</td>
-							<td>Z</td>
-							<td>A</td>
-						</tr>
+					<% } %>
 					</tbody>
 				</table>
 					

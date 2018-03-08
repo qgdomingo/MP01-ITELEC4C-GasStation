@@ -11,7 +11,7 @@ import gas.station.utility.CreditCardTypeValidation;
 import gas.station.utility.InputValidationAntiXSS;
 import gas.station.utility.InvalidCreditCardNumberException;
 import gas.station.utility.Luhn;
-import gas.station.utility.Security;
+
 public class GasolinePurchaseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -96,13 +96,8 @@ public class GasolinePurchaseServlet extends HttpServlet {
 			}
 		} catch (InvalidCreditCardNumberException e) {
 			
-<<<<<<< HEAD
 			getServletContext().log(e.getMessage() + " Redirecting to Error Page");
 
-=======
-			getServletContext().log(e.getMessage() + ". Redirecting to Error Page");
-			
->>>>>>> 0fe5b386390b1ca9534f0532e53fe66e71093881
 			getServletContext().getRequestDispatcher("/carderror.jsp")
 				.forward(request, response);	
 		}

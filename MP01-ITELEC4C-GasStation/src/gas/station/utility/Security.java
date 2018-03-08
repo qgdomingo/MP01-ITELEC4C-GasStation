@@ -8,7 +8,7 @@ public class Security {
 
 	public static void main(String[] args) {
 		
-		System.out.println(encrypt("jdbc:mysql://localhost:3306/mp-domingo-velilla"));
+		System.out.println(encrypt("giodomingo"));
 	}
 	
 	private static byte[] key = {

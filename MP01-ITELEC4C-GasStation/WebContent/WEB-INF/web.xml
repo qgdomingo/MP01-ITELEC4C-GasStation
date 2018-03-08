@@ -30,12 +30,43 @@
   	<servlet-name>GasolinePurchaseServlet</servlet-name>
   	<servlet-class>gas.station.controller.GasolinePurchaseServlet</servlet-class>
   </servlet>
+
+  <servlet>
+  	<servlet-name>ValidateUserServlet</servlet-name>
+  	<servlet-class>gas.station.controller.ValidateUserServlet</servlet-class>
+  </servlet>
   
+  <servlet>
+  	<servlet-name>UserLogoutServlet</servlet-name>
+  	<servlet-class>gas.station.controller.UserLogoutServlet</servlet-class>
+  </servlet>
+ 
+  <servlet>
+  	<servlet-name>ViewLogsActionServlet</servlet-name>
+  	<servlet-class>gas.station.controller.ViewLogsActionServlet</servlet-class>
+  </servlet>
+    
   <servlet-mapping>
   	<servlet-name>GasolinePurchaseServlet</servlet-name>
   	<url-pattern>/gasolinepurchase.action</url-pattern>
   </servlet-mapping>
  
+ <servlet-mapping>
+    <servlet-name>ValidateUserServlet</servlet-name>
+    <url-pattern>/validateuser.action</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>UserLogoutServlet</servlet-name>
+    <url-pattern>/logout.action</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+  	<servlet-name>ViewLogsActionServlet</servlet-name>
+  	<url-pattern>/viewlogs.action</url-pattern>
+  </servlet-mapping>
+ 
+  
  <!--   
   <listener>
   	<listener-class>
