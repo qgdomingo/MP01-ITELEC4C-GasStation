@@ -51,13 +51,13 @@
 			</div>
 			
 			<!-- LOGIN FORM -->
-			<div class="ui inverted segment">
+			<div class="ui inverted segment" id="login_segment">
 				<h3 class="ui header" style="margin-top: 5px;">
 					<i class="sign in alternate icon"></i>
 					Login
 				</h3>
 			 	
-				<form class="ui form" action='validateuser.action' method="post">
+				<form class="ui form" action="validateuser.action" method="post">
 					<div class="two fields">
 					<div class="field">
 						<label>Username</label>
@@ -85,8 +85,35 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- CORRECT CREDENTIALS -->
+	<div class="ui tiny modal" id="correct_dialog">
+		<div class="header">
+			Login Successful.
+			<div class="ui header" style="margin-top: 5px;"> 
+			<p class="sub header">Please wait for 2 seconds, you are being redirected to the order page.</p>
+			</div>
+		</div> 
+	</div>
+	
+	<!-- INCORRECT CREDENTIALS -->
+	<div class="ui tiny modal" id="incorrect_dialog">
+		<div class="header">
+			Incorrect Credentials.
+			<div class="ui header" style="margin-top: 5px;"> 
+			<p class="sub header">Please check your credentials and try logging in again.</p>
+			</div>
+		</div>
+		<div class="actions">
+			<button class="ui button yellow ok">
+				Okay
+			</button>
+		</div> 
+	</div>
+	
 	<script src="resource/js/jquery-3.2.1.min.js"></script>
 	<script src="resource/semantic-ui/semantic.min.js"></script>
+	<script src="resource/js/jquery.form.min.js"></script>
 	<script src="resource/js/login_form.js"></script>
 </body>
 </html>

@@ -43,7 +43,7 @@
 					Order
 				</a>
 				<form method="post" action="viewlogs.action" id="viewlogs_form">
-					<a class="item" id="viewlogs_btn">
+					<a class="item active" id="viewlogs_btn">
 						<i class="history icon"></i>
 						Transaction History
 					</a>

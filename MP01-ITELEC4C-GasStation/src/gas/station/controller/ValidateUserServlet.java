@@ -26,6 +26,9 @@ public class ValidateUserServlet extends HttpServlet {
 		String userNameInput = request.getParameter("username");
 		String userPasswordInput = request.getParameter("password");
 		
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/plain");
+		
 		AdminBean user = new AdminBean(getServletContext(), 
 			userNameInput, userPasswordInput);
 		
@@ -39,9 +42,10 @@ public class ValidateUserServlet extends HttpServlet {
 			//programmatic session timeout
 			userSession.setMaxInactiveInterval(30);
 			
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			response.setStatus(HttpServletResponse.SC_OK);
+			response.getWriter().write("success");
 		} else {
-			response.sendRedirect("loginerror.jsp");
+			response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
 		}	
 	}
 }
