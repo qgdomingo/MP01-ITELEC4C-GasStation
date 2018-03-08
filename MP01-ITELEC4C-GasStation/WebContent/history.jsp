@@ -32,19 +32,15 @@
 			
 			<!-- MENU -->
 			<div class="ui pointing inverted menu">
-				<a class="active item" href="index.jsp">
+				<a class="item" href="index.jsp">
 					<i class="cart icon"></i>
 					Order
 				</a>
-				<a class="item" href="history.jsp">
+				<a class="active item" href="history.jsp">
 					<i class="history icon"></i>
 					Transaction History
 				</a>
-			 	<div class="right menu">
-					<a class="item" href="loginform.jsp">
-						<i class="sign in alternate icon"></i>
-						Login
-					</a>
+			 	<div class="right menu"> 
 					<form method="" action="" id="logout_form">
 						<a class="item" href="javascript:{}" id="logout_btn">
 							<i class="sign out alternate icon"></i>
@@ -54,64 +50,48 @@
 				</div>
 			</div>
 			
-			<!-- GAS CHECKOUT RESULTS -->
+			<!-- TRANSACTION HISTORY -->
 			<div class="ui inverted segment">
-				<h2 class="ui header" style="margin-top: 5px;">
-					<i class="shopping cart icon"></i>
-					You Purchased...
-				</h2>
+				<h3 class="ui header" style="margin-top: 5px;">
+					<i class="history icon"></i>
+					Transaction History
+				</h3>
 				
-				<table class="ui compact definition table">
+				<table class="ui table">
+					<thead class="ui header"> 
+						<tr>
+							<td>X1</td>
+							<td>Y2</td>
+							<td>Z3</td>
+							<td>A4</td>
+						</tr>
+					</thead>
 					<tbody>
 						<tr>
-							<td><b>Customer Name:</b></td>
-							<td>${purchase.firstName} ${purchase.lastName}</td>
+							<td>X</td>
+							<td>Y</td>
+							<td>Z</td>
+							<td>A</td>
 						</tr>
 						<tr>
-							<td><b>Fuel Type:</b></td>
-							<td>${purchase.gasType}</td>
+							<td>X</td>
+							<td>Y</td>
+							<td>Z</td>
+							<td>A</td>
 						</tr>
 						<tr>
-							<td><b>Price per Liter:</b></td>
-							<td>&#8369;${purchase.pricePerLiterAmount}</td>
-						</tr>
-						<tr>
-							<td><b>Liters Ordered:</b></td>
-							<td>${purchase.liters}</td>
-						</tr>
-						<tr>
-							<td><b>Purchase Amount:</b></td>
-							<td>&#8369;${purchase.purchaseAmount}</td>
-						</tr>
-						<tr>
-							<td><b>VAT:</b></td>
-							<td>&#8369;${purchase.vat}</td>
-						</tr>
-						<tr>
-							<td><b>TOTAL AMOUNT:</b></td>
-							<td>&#8369;${purchase.totalAmount}</td>
+							<td>X</td>
+							<td>Y</td>
+							<td>Z</td>
+							<td>A</td>
 						</tr>
 					</tbody>
 				</table>
 					
-				<p><i>Credit card **** **** **** ${purchase.creditCardNumber} has successfully charged.</i></p>
-				
-				<button type="button" class="ui fluid big blue animated button" tabindex="0">
-					<div class="visible content">Order Again</div>
-					<div class="hidden content">
-						<i class="large arrow left icon"></i>
-					</div>
-				</button>
 			</div>
 		</div>
 	</div>
 	<script src="resource/js/jquery-3.2.1.min.js"></script>
-	<script src="resource/semantic-ui/semantic.min.js"></script>
 	<script src="resource/js/logout_form.js"></script>
-	<script>
-		$('button').click( function(){
-		   window.location.href = 'index.jsp';
-		})
-	</script>
 </body>
 </html>

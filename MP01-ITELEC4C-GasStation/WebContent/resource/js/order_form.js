@@ -92,10 +92,15 @@
 		          {
 		            type   : 'empty',
 		            prompt : 'Please enter your credit card number'
-		          }
+		          },
+		          {
+			        type   : 'exactLength[16]',
+			        prompt : 'Your card number must be 16 digits long'
+			      }
 		        ]
 		      }
 		    }
 		  })
 		;
 	}
+	
