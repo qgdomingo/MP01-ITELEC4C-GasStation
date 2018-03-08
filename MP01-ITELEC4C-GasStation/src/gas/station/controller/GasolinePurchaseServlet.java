@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import gas.station.model.*;
 import gas.station.utility.CreditCardTypeValidation;
+import gas.station.utility.InputValidationAntiXSS;
 import gas.station.utility.InvalidCreditCardNumberException;
 import gas.station.utility.Luhn;
 import gas.station.utility.Security;
@@ -23,12 +24,29 @@ public class GasolinePurchaseServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String firstName = request.getParameter("first_name");
-		String lastName = request.getParameter("last_name");
-		String creditCardType = request.getParameter("credit_card_type");
-		String creditCardNumber = request.getParameter("credit_card_number");
-		String gasType = request.getParameter("fuel_type");
-		double liters = Double.parseDouble(request.getParameter("fuel_liters"));
+		String firstName = InputValidationAntiXSS
+							.stringToHtmlString(
+								request.getParameter("first_name")
+							);
+		String lastName = InputValidationAntiXSS
+							.stringToHtmlString(
+								request.getParameter("last_name")
+							);
+		String creditCardType = InputValidationAntiXSS
+								.stringToHtmlString(
+									request.getParameter("credit_card_type")
+								);
+		String creditCardNumber = InputValidationAntiXSS
+									.stringToHtmlString(
+										request.getParameter("credit_card_number")
+									);
+		String gasType = InputValidationAntiXSS
+							.stringToHtmlString(
+								request.getParameter("fuel_type")
+								);
+		double liters = Double.parseDouble(
+							InputValidationAntiXSS
+							.stringToHtmlString(request.getParameter("fuel_liters")));
 		
 		double pricePerLiterAmount = 0.00;
 		double purchaseAmount = 0.00;
@@ -65,6 +83,7 @@ public class GasolinePurchaseServlet extends HttpServlet {
 						vat, totalAmount );
 				
 				purchaseBean.insertRecord();
+				purchaseBean.logPurchaseDetails();
 				//binding the user object to request attribute
 				purchaseBean.setCreditCardNumber(creditCardNumber.substring(creditCardNumber.length() - 4));
 				getServletContext().setAttribute("purchase", purchaseBean);
@@ -77,15 +96,10 @@ public class GasolinePurchaseServlet extends HttpServlet {
 			}
 		} catch (InvalidCreditCardNumberException e) {
 			
-<<<<<<< HEAD
-			getServletContext().log(e.getMessage() + ". Redirecting to Error Page");
-=======
-			getServletContext().log(e.getMessage());
->>>>>>> 42d649327d5e5276258dac475921eb1bba94bd73
-			
+			getServletContext().log(e.getMessage() + " Redirecting to Error Page");
+
 			getServletContext().getRequestDispatcher("/carderror.jsp")
 				.forward(request, response);	
 		}
-		
 	}
 }

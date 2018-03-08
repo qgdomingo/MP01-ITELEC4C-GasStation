@@ -74,6 +74,27 @@ public class PurchaseBean {
 		}
 	}
 	
+	public void logPurchaseDetails(){
+		try{
+			String sql = "insert into transactionlogs (cc_number,fuel_type,fuel_liters,total_net_pay,timestamp) values (?,?,?,?,?)";
+			Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+			
+			Connection connection = (Connection) getServletContext.getAttribute("dbconn");
+			
+			PreparedStatement pstmnt = connection.prepareStatement(sql);
+			
+			pstmnt.setString(1, Security.encrypt(this.creditCardNumber));
+			pstmnt.setString(2, Security.encrypt(this.gasType));
+			pstmnt.setString(3, Security.encrypt(String.valueOf(this.liters)));
+			pstmnt.setString(4, Security.encrypt(String.valueOf(this.totalAmount)));
+			pstmnt.setString(5, Security.encrypt(timestamp.toString()));
+
+			pstmnt.executeUpdate();
+		}catch(SQLException sqle){
+			System.err.println(sqle.getMessage());
+		}
+		
+	}
 	public String getFirstName() {
 		return firstName;
 	}
