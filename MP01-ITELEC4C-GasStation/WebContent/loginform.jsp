@@ -17,11 +17,9 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="theme-color" content="#ffffff">	
 	</head>
-	<body>
-	
+<body>
 	<div class="ui centered grid container">
-		<div class="eight wide computer eleven wide tablet sixteen wide mobile column form-area ">
-		
+		<div class="ten wide computer fourteen wide tablet sixteen wide mobile column form-area ">
 			<!-- GAS HEADER -->
 			<h1 class="ui center aligned icon header">
 				<div class="ui image">
@@ -34,56 +32,55 @@
 			
 			<!-- MENU -->
 			<div class="ui pointing inverted menu">
-				<a class="active item" href="index.jsp">
+				<a class="item" href="index.jsp">
 					<i class="cart icon"></i>
 					Order
 				</a>
-				<a class="item" href="history.jsp">
-					<i class="history icon"></i>
-					Transaction History
-				</a>
 			 	<div class="right menu">
-					<a class="item" href="loginform.jsp">
+					<a class="active item" href="loginform.jsp">
 						<i class="sign in alternate icon"></i>
 						Login
 					</a>
-					<form method="" action="" id="logout_form">
-						<a class="item" href="javascript:{}" id="logout_btn">
-							<i class="sign out alternate icon"></i>
-							Logout
-						</a>
-					</form>
 				</div>
 			</div>
 			
-			<!-- ERROR AREA -->
-			<div class="ui inverted segment">	 
-				<h2 class="ui header">
-					Credit Card Number Error
-				</h2>
-				
-				<h4>
-					You have entered an invalid credit card number. Please try again. 
-				</h4>
-				
-				<br> 
-				
-				<button type="button" id="" class="ui fluid animated yellow button" tabindex="0">
-					<div class="visible content">Go Back</div>
-					<div class="hidden content">
-						<i class="arrow left icon"></i>
+			<!-- LOGIN FORM -->
+			<div class="ui inverted segment">
+				<h3 class="ui header" style="margin-top: 5px;">
+					<i class="sign in alternate icon"></i>
+					Login
+				</h3>
+			 	
+				<form class="ui form">
+					<div class="two fields">
+					<div class="field">
+						<label>Username</label>
+						<div class="ui left icon input">
+  							<i class="user icon"></i>
+ 							<input type="text" name="username" placeholder="Username">
+						</div>
 					</div>
-				</button>
+					<div class="field">
+						<label>Password</label>
+						<div class="ui left icon input">
+  							<i class="lock icon"></i>
+ 							<input type="password" name="password" placeholder="Password">
+						</div>
+					</div>
+					</div> 
+					<div class="ui error message"></div>
+					
+					<button type="submit" class="ui fluid green button" tabindex="0">
+						Login
+					</button> 
+				</form>
+				
+				<br>
 			</div>
 		</div>
 	</div>
-	
-	</body>
 	<script src="resource/js/jquery-3.2.1.min.js"></script>
-	<script>
-		$('button').click( function(){
-		   window.location.href = 'index.jsp';
-		})
-	</script>
-	<script src="resource/js/logout_form.js"></script>
+	<script src="resource/semantic-ui/semantic.min.js"></script>
+	<script src="resource/js/login_form.js"></script>
+</body>
 </html>

@@ -26,7 +26,7 @@
 	}
 	
 	.ui.definition.table tr td.definition, .ui.definition.table tr td:first-child:not(.ignored) {
-		background: #fbb246 !important;
+		background: rgb(251, 189, 8) !important;
 		color: white !important;
 	}
 	
@@ -40,4 +40,9 @@
 	
 	.ui.modal > .content {
 		background-color: #1b1c1d !important
+	}
+	
+	thead {
+		background: rgb(251, 189, 8) !important;
+		color: white !important;
 	}

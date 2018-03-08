@@ -20,7 +20,7 @@
 	<body>
 	
 	<div class="ui centered grid container">
-		<div class="eight wide computer eleven wide tablet sixteen wide mobile column form-area ">
+		<div class="ten wide computer fourteen wide tablet sixteen wide mobile column form-area ">
 		
 			<!-- GAS HEADER -->
 			<h1 class="ui center aligned icon header">
@@ -31,6 +31,30 @@
 					Stop n' Gas
 				</div>
 			</h1>
+			
+			<!-- MENU -->
+			<div class="ui pointing inverted menu">
+				<a class="active item" href="index.jsp">
+					<i class="cart icon"></i>
+					Order
+				</a>
+				<a class="item" href="history.jsp">
+					<i class="history icon"></i>
+					Transaction History
+				</a>
+			 	<div class="right menu">
+					<a class="item" href="loginform.jsp">
+						<i class="sign in alternate icon"></i>
+						Login
+					</a>
+					<form method="" action="" id="logout_form">
+						<a class="item" href="javascript:{}" id="logout_btn">
+							<i class="sign out alternate icon"></i>
+							Logout
+						</a>
+					</form>
+				</div>
+			</div>
 			
 			<!-- GAS ORDER FORM -->
 			<div class="ui inverted segment">		
@@ -59,7 +83,7 @@
 							<div class="ui action left icon input">
 							  <i class="car icon"></i>
 							  <input name="fuel_type" type="text" readonly="" >
-							  <div class="ui teal button" id="select_fuel">Select Fuel</div>
+							  <div class="ui yellow button" id="select_fuel">Select Fuel</div>
 							</div>
 						</div>
 						
@@ -81,7 +105,7 @@
 							<div class="ui action left icon input">
 							  <i class="credit card icon"></i>
 							  <input name="credit_card_type" type="text" readonly="" >
-							  <div class="ui teal button" id="select_card">Select Card</div>
+							  <div class="ui yellow button" id="select_card">Select Card</div>
 							</div>
 							
 						</div>
@@ -97,7 +121,7 @@
 					
 					<br>
 					
-					<button type="submit" class="ui fluid big green animated button" tabindex="0">
+					<button type="submit" class="ui fluid big green animated button" tabindex="0" id="form_submit">
 						<div class="visible content">Submit Order</div>
 						<div class="hidden content">
 							<i class="large shopping cart icon"></i>
@@ -285,6 +309,7 @@
 	</div>
 	</body>
 	<script src="resource/js/jquery-3.2.1.min.js"></script>
-	<script src="resource/js/order_form.js"></script>
 	<script src="resource/semantic-ui/semantic.min.js"></script>
+	<script src="resource/js/order_form.js"></script>
+	<script src="resource/js/logout_form.js"></script>
 </html>
