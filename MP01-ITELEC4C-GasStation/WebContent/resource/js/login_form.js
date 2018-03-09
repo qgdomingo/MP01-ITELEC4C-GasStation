@@ -17,7 +17,11 @@
 /*
  * FUNCTION SUBMIT FORM
  */	
-	$('.ui.form').ajaxForm({
+	$('button[type="submit"]').click( function(e) {
+		e.preventDefault();
+	});
+	
+	$('#login_form').ajaxForm({
 		beforeSubmit: isLoginFormValid,
 		success: function(response) {    
         	$('#correct_dialog').modal({
@@ -45,7 +49,7 @@
 	
 	
 	function formValidation() {
-		$('.ui.form')
+		$('#login_form')
 		  .form({
 		    fields: {
 		      username: {
@@ -71,7 +75,7 @@
 	}
 	
 	function isLoginFormValid() {
-		if( $('.ui.form').form('is valid') ) {
+		if( $('#login_form').form('is valid') ) {
 			addCSSClass('#login_segment', 'loading');
 			return true;
 		} 
