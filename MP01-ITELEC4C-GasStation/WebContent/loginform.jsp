@@ -52,7 +52,7 @@
 					Login
 				</h3>
 			 	
-				<form class="ui form" action="validateuser.action" method="post">
+				<form class="ui form" action="validateuser.action" method="post" id="login_form">
 					<div class="two fields">
 					<div class="field">
 						<label>Username</label>

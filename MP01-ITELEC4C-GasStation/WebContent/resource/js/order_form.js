@@ -34,7 +34,7 @@
  * FUNCTION SUBMIT FORM
  */	
 	function formValidation() {
-		$('.ui.form')
+		$('#order_form')
 		  .form({
 		    fields: {
 		      first_name: {

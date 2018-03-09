@@ -73,7 +73,7 @@
 					Order Form
 				</h2>
 			
-				<form class="ui form" action='gasolinepurchase.action' method="post">
+				<form class="ui form" action='gasolinepurchase.action' method="post" id="order_form">
 					<div class="two fields">
 						<div class=" field">
 							<label>First Name</label>
