@@ -28,7 +28,6 @@
         	removeCSSClass('#login_segment', 'loading');
         	
         	setTimeout(function() {  
-        		window.location.href = 'index.jsp';
         		$('#correct_dialog').modal('hide');	
         	}, 2000);
         },

@@ -1,6 +1,7 @@
 package gas.station.controller;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,14 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import gas.station.model.AdminBean;
-import gas.station.utility.Security;
 
 public class ValidateUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
-	public void init() throws ServletException {
-		System.out.println("in init method");
-	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
@@ -29,8 +26,9 @@ public class ValidateUserServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/plain");
 		
-		AdminBean user = new AdminBean(getServletContext(), 
-			userNameInput, userPasswordInput);
+		AdminBean user = new AdminBean(
+				(Connection) getServletContext().getAttribute("dbconn"), 
+				userNameInput, userPasswordInput);
 		
 		if (user.isUserValid()) {
 			

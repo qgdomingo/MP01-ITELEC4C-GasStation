@@ -20,7 +20,9 @@ public class ViewLogsActionServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		ResultSet logRecords = new AdminBean(getServletContext(), "", "")
+		ResultSet logRecords = new AdminBean(
+				(Connection) getServletContext().getAttribute("dbconn"), 
+				"", "")
 			.getLogs();
 		
 		request.setAttribute("logRecord", logRecords);

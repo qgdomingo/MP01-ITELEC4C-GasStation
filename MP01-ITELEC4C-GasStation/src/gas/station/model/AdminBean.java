@@ -5,9 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
-
 import gas.station.listener.UserHttpSessionListener;
 import gas.station.utility.Security;
 
@@ -16,19 +13,20 @@ public class AdminBean {
 	private String name;
 	private String password;
 	
-	private ServletContext getServletContext;
+	private Connection connection;
 	
 	public AdminBean() {
 	}
 	
-	public AdminBean(ServletContext getServletContext,
+	public AdminBean(Connection connection,
 			String ... value) { //... is the  same array
 		this.name = value[0];
 		this.password = value[1];
-		this.getServletContext = getServletContext;
+		this.connection = connection;
 		//create a server log entry that 
 		//says "Bean initialization finished"
-		getServletContext.log("Bean initialization finished");
+
+		System.out.println("Connection initialization finished sa adminbean");
 	}
 	
 	public String getName() {
@@ -47,12 +45,9 @@ public class AdminBean {
 	public boolean isUserValid() {
 		boolean isValid = false;
 		
-		//perform decryption on input name and value on config
 		try{
 			String sql = "select * from admin where username = ? and password = ?";
-				
-			Connection connection = (Connection) getServletContext.getAttribute("dbconn");
-			
+							
 			PreparedStatement pstmnt = connection.prepareStatement(sql);
 			
 			pstmnt.setString(1, Security.encrypt(this.name));
@@ -60,7 +55,9 @@ public class AdminBean {
 
 			ResultSet rs = pstmnt.executeQuery();
 			
-			if (rs.next()){
+			if(rs.next() == false){
+			
+			} else{
 				isValid = true;
 				
 				System.out.println("A new session has been created.");
@@ -73,7 +70,7 @@ public class AdminBean {
 		}catch(SQLException sqle){
 			System.err.println(sqle.getMessage());
 		}
-
+	
 		return isValid;
 	}
 	
@@ -84,8 +81,6 @@ public class AdminBean {
 		String sql = "select * from transactionlogs";
 		
 		try {
-			Connection connection = (Connection) getServletContext.getAttribute("dbconn");
-			
 			PreparedStatement pstmnt = connection.prepareStatement(sql);
 			logs = pstmnt.executeQuery();
 			

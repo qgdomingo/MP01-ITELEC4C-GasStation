@@ -87,7 +87,7 @@ public class GasolinePurchaseServlet extends HttpServlet {
 				//binding the user object to request attribute
 				purchaseBean.setCreditCardNumber(creditCardNumber.substring(creditCardNumber.length() - 4));
 				getServletContext().setAttribute("purchase", purchaseBean);
-				
+
 				getServletContext().log("ready for dispatching " +
 					"to display.jsp");
 				
